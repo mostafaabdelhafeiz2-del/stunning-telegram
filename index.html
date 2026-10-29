@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أخلاقيات مهنة التعليم والمعلم | جامعة الفيوم</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Arabic Fonts (Cairo) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0284c7',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        academic: {
+                            gold: '#d97706',
+                            green: '#059669',
+                            navy: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            background-color: #0f172a;
+        }
+        .light body {
+            background-color: #f8fafc;
+        }
+        .custom-glass {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .light .custom-glass {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .card-hover-effect {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="dark bg-slate-900 text-slate-100 transition-colors duration-300 min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-white">
+
+    <!-- Top Navigation Bar -->
+    <nav class="sticky top-0 z-50 custom-glass border-b border-slate-800 dark:border-slate-800/80 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500 to-amber-300 flex items-center justify-center text-slate-900 shadow-lg shadow-amber-500/20 shrink-0">
+                    <i class="fa-solid fa-graduation-cap text-2xl"></i>
+                </div>
+                <div>
+                    <span class="font-extrabold text-lg text-slate-900 dark:text-white block leading-tight">جامعة الفيوم</span>
+                    <span class="text-xs text-amber-500 dark:text-amber-400 font-bold">تكنولوجيا التعليم الرقمي</span>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button id="themeToggle" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-amber-400 hover:scale-105 active:scale-95 transition-all border border-slate-200 dark:border-slate-700">
+                    <i class="fa-solid fa-moon text-lg" id="themeIcon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+        <!-- Academic Branding Banner -->
+        <header class="bg-white dark:bg-slate-800/80 rounded-3xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-700/80 shadow-xl relative overflow-hidden backdrop-blur-md">
+            <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
+                <div class="md:col-span-7 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-right gap-6">
+                    <div class="p-4 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl shadow-lg shadow-amber-500/20 shrink-0 flex flex-col items-center justify-center w-28 h-28 sm:w-32 sm:h-32 text-white border border-white/20">
+                        <i class="fa-solid fa-building-columns text-4xl mb-1"></i>
+                        <span class="text-[11px] font-black tracking-wider uppercase">جامعة الفيوم</span>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-bold border border-amber-500/20">
+                            <i class="fa-solid fa-university"></i> كلية تكنولوجيا التعليم الرقمي
+                        </span>
+                        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white leading-tight">
+                            أخلاقيات مهنة التعليم والمعلم
+                        </h1>
+                        <p class="text-slate-500 dark:text-slate-400 font-semibold text-sm">
+                            الفصل الثالث | العام الجامعي 2026 / 2027
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Supervision Card -->
+                <div class="md:col-span-5 bg-slate-50 dark:bg-slate-900/80 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700 flex items-center gap-4 shadow-sm">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-700 text-white flex items-center justify-center text-2xl shadow-lg shadow-emerald-500/20 shrink-0">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-400 dark:text-slate-400 font-bold block mb-0.5">تحت إشراف الأستاذة الدكتورة</span>
+                        <h2 class="text-lg font-extrabold text-slate-900 dark:text-white">أ.د / ريهام مصطفى فتيح</h2>
+                        <span class="inline-block mt-1 text-[11px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Appreciation Section -->
+        <section class="bg-gradient-to-br from-amber-500/10 via-slate-800/80 to-slate-900 border border-amber-500/30 rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden backdrop-blur-md">
+            <div class="flex flex-col md:flex-row items-center gap-6 relative z-10">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center text-3xl shrink-0 shadow-inner">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <div class="space-y-2 text-center md:text-right">
+                    <span class="text-xs font-black text-amber-400 tracking-wider uppercase bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+                        رسالة شكر وتقدير وإجلال
+                    </span>
+                    <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
+                        إلى الأستاذة الدكتورة / ريهام مصطفى فتيح
+                    </h3>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed font-medium">
+                        يتقدم قائد المجموعة الطالب <strong>مصطفى أحمد عبد الحفيظ</strong> وكافة أعضاء فريق العمل بكلية تكنولوجيا التعليم الرقمي بجامعة الفيوم بخالص الشكر والامتنان والتقدير لسعادتكم، على ما بذلتموه معنا من توجيهات سديدة ودعم علمي وتربوي متواصل، ومتابعتكم الدقيقة لإنجاز هذا العمل بالمستوى الأكاديمي والمهني اللائق.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10 Core Topics Section -->
+        <section class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-4">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white flex items-center gap-3">
+                        <i class="fa-solid fa-layer-group text-amber-500"></i> محاور الدراسة (10 نقاط مفصلة)
+                    </h2>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs sm:text-sm mt-1">اضغط على أي بطاقة لاستعراض التفاصيل الكاملة والشرح المعتمد</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="topicsContainer">
+                <!-- JavaScript Rendered Cards -->
+            </div>
+        </section>
+
+        <!-- Team Members Section -->
+        <section class="bg-white dark:bg-slate-800/80 rounded-3xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-700/80 shadow-xl backdrop-blur-md space-y-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-700/60 pb-6">
+                <div>
+                    <h2 class="text-2xl font-black text-slate-900 dark:text-white flex items-center gap-3">
+                        <i class="fa-solid fa-users-gear text-amber-500"></i> فريق عمل المشروع والباحثين
+                    </h2>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs sm:text-sm mt-1">قائمة الطلاب المشاركين في إعداد وتطوير المحتوى الرقمي</p>
+                </div>
+
+                <div class="relative w-full md:w-80">
+                    <input type="text" id="memberSearch" placeholder="ابحث عن اسم عضو بالمجموعة..." class="w-full pr-10 pl-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500/50 text-sm font-semibold transition-all">
+                    <i class="fa-solid fa-magnifying-glass absolute right-3.5 top-3.5 text-slate-400 text-sm"></i>
+                </div>
+            </div>
+
+            <div class="p-6 bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 rounded-2xl shadow-lg shadow-amber-500/15 text-white flex flex-col lg:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-4 text-center sm:text-right">
+                    <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-3xl border border-white/30 shrink-0">
+                        👑
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-amber-100 block">قائد المجموعة (Leader)</span>
+                        <h3 class="text-xl sm:text-2xl font-black">مصطفى احمد عبد الحفيظ</h3>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row items-center gap-3 bg-slate-900/40 backdrop-blur-md p-3.5 rounded-xl border border-white/20 w-full lg:w-auto text-xs sm:text-sm font-semibold">
+                    <a href="tel:01117417342" class="flex items-center gap-2 hover:text-amber-200 transition-colors">
+                        <i class="fa-solid fa-phone text-amber-300"></i>
+                        <span dir="ltr">01117417342</span>
+                    </a>
+                    <span class="hidden sm:inline text-white/40">|</span>
+                    <a href="mailto:m.comm80@gmail.com" class="flex items-center gap-2 hover:text-amber-200 transition-colors">
+                        <i class="fa-solid fa-envelope text-amber-300"></i>
+                        <span>m.comm80@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" id="teamGrid">
+                <!-- JavaScript Rendered Members -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal Dialog -->
+    <div id="detailModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden flex items-center justify-center p-4 transition-all">
+        <div class="bg-white dark:bg-slate-800 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 dark:border-slate-700 transform transition-all space-y-5">
+            <div class="flex items-start justify-between gap-4 border-b border-slate-100 dark:border-slate-700 pb-4">
+                <h3 class="text-xl font-black text-slate-900 dark:text-white leading-snug" id="modalTitle">عنوان المحور</h3>
+                <button onclick="closeModal()" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 flex items-center justify-center transition-all shrink-0">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base font-medium" id="modalDesc"></p>
+            </div>
+            <div class="pt-2 flex justify-end">
+                <button onclick="closeModal()" class="px-6 py-2.5 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-xl hover:shadow-lg hover:shadow-amber-500/25 transition-all text-sm font-bold">
+                    إغلاق
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-8 text-center text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 space-y-3">
+            <p class="font-bold">جامعة الفيوم - كلية تكنولوجيا التعليم الرقمي &copy; 2026/2027</p>
+            <p class="text-slate-400 dark:text-slate-500"> شكرا لدعمكم الدائم وبالتوفيق للجميع 
+            <div class="pt-2 flex items-center justify-center gap-4 text-xs">
+                <a href="tel:01117417342" class="hover:text-amber-500 flex items-center gap-1"><i class="fa-solid fa-phone"></i> 01117417342</a>
+                <span>•</span>
+                <a href="mailto:m.comm80@gmail.com" class="hover:text-amber-500 flex items-center gap-1"><i class="fa-solid fa-envelope"></i> m.comm80@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactivity & Data -->
+    <script>
+        const topics = [
+            {
+                id: 1,
+                title: "الأخلاق في مهنة التربية والتعليم",
+                desc: "تعتبر الأخلاق الإطار المرجعي والقيمي الذي يوجه سلوك القائمين على التعليم، وتضمن تقديم رسالة سامية تبني أجيالاً واعية ومسؤولة بحرية وأمانة.",
+                img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80",
+                icon: "fa-scale-balanced"
+            },
+            {
+                id: 2,
+                title: "أهمية أخلاقيات مهنة التعليم",
+                desc: "تنعكس أهميتها في حماية حقوق المتعلمين، بناء الثقة بين المؤسسة التربوية والمجتمع، ورفع جودة العملية التعليمية من خلال الالتزام بالمعايير الأخلاقية.",
+                img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80",
+                icon: "fa-award"
+            },
+            {
+                id: 3,
+                title: "أخلاقيات المعلم",
+                desc: "تشمل المنظومة السلوكية والشخصية التي ينبغي أن يلتزم بها المعلم في التعامل مع الطلاب، الزملاء، والإدارة ليكون القدوة الحسنة داخل وخارج الفصل.",
+                img: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80",
+                icon: "fa-chalkboard-user"
+            },
+            {
+                id: 4,
+                title: "محددات مهنة التعليم",
+                desc: "تتضمن القوانين، اللوائح، والأطر النظامية والمجتمعية التي تنظم الممارسة المهنية وتضمن تكامل الأدوار والالتزام بالحقوق والواجبات.",
+                img: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80",
+                icon: "fa-compass"
+            },
+            {
+                id: 5,
+                title: "الخصائص الخلقية الواجب توافرها في المربي",
+                desc: "من أبرزها: الصدق، الإخلاص، العدل، الصبر، التسامح، والقدرة على الاستماع والتعاطف لبناء بيئة تعليمية إيجابية ومحفزة.",
+                img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80",
+                icon: "fa-heart"
+            },
+            {
+                id: 6,
+                title: "دور المربي في مواجهة تحديات القرن الحادي والعشرين",
+                desc: "تمكين المعلم من مواكبة التحول الرقمي، الابتكار التقني، وتوجيه المتعلمين للاستخدام الآمن والفعال للذكاء الاصطناعي والتكنولوجيا الحديثة.",
+                img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80",
+                icon: "fa-laptop-code"
+            },
+            {
+                id: 7,
+                title: "الزمن الإنتاجي للمتعلم بين التقنين والواقع",
+                desc: "الموازنة الفعالة بين الاستثمار الأمثل لأوقات التعلم المحددة في المناهج وبين معالجة المعوقات الواقعية لرفع مستوى التحصيل العملي.",
+                img: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=600&q=80",
+                icon: "fa-clock"
+            },
+            {
+                id: 8,
+                title: "أخلاقيات مهنة التعليم المفضلة من قبل الطلاب",
+                desc: "السمات التي يفضلها الطلاب كالعدالة، التشجيع المستمر، الاحترام المتبادل، واستخدام الأساليب الحفازة والحديثة أثناء التدريس.",
+                img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80",
+                icon: "fa-thumbs-up"
+            },
+            {
+                id: 9,
+                title: "أخلاقيات الإدارة",
+                desc: "القواعد والمبادئ الأخلاقية الحاكمة لاتخاذ القرارات الإدارية، تحقيق الشفافية، العدالة بين هيئة التدريس، وتوفير البيئة المناسبة للإبداع.",
+                img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80",
+                icon: "fa-building-columns"
+            },
+            {
+                id: 10,
+                title: "المدير قائد وإداري",
+                desc: "الدمج المتوازن بين المهارات التنظيمية الإدارية والقدرات القيادية الملهمة للتأثير في فريق العمل وتوجيه المؤسسة نحو النجاح التنافسي.",
+                img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80",
+                icon: "fa-user-tie"
+            }
+        ];
+
+        // Team Members List
+        const members = [
+            "مصطفى أحمد عويس ابراهيم",
+            "فاطمه على عيد منجود",
+            "مها ممدوح مزار عثمان",
+            "ساميه اسماعيل ابراهيم حسن",
+            "زينب محمد شعبان عبد اللاه",
+            "غادة خليفة نصر",
+            "امنية انور محمد احمد",
+            "مي جمال هاشم علي",
+            "مريم شعبان سالم مصطفى",
+            "مياده رمضان موسى عبد السلام",
+            "ندي عزت لطفي عبد اللطيف",
+            "منى حسين رمضان عبد الرحمن",
+            "منة الله محمد عبد السميع",
+            "ياسمين سيد مصطفي درويش",
+            "اسلام مصطفى حسن على نصار",
+            "عاصم احمد صلاح الدين حسن",
+            "محمد حدوت محمود",
+            "محمد رمضان عبد الفتاح",
+            "حماده ربيع عبد الغنى حجاج",
+            "رمضان محمد يوسف",
+            "فادي اشرف محمود محمد",
+            "وائل محمد محمود",
+            "هانى عبد المقصود احمد حسين",
+            "احمد عبد الفتاح فهمى على",
+            "محمود عبد العزيز عمر",
+            "كريم حسن جمعه حسن",
+            "نورهان سليمان حسين على",
+            "اسماء عيد عبدالله مصري",
+            "رانيا حسين صبحي",
+            "دينا فضل عبد العزيز فضل عبد المجيد",
+            "يارا محمود زكي",
+            "اماني مصطفي عمار"
+        ];
+
+        // Render Topics
+        const topicsContainer = document.getElementById('topicsContainer');
+        topics.forEach(t => {
+            const card = document.createElement('div');
+            card.className = "bg-white dark:bg-slate-800/90 rounded-2xl overflow-hidden border border-slate-200/80 dark:border-slate-700/80 shadow-md card-hover-effect flex flex-col justify-between cursor-pointer group";
+            card.onclick = () => openModal(t.title, t.desc);
+            card.innerHTML = `
+                <div>
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="${t.img}" alt="${t.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+                        <div class="absolute top-3 right-3 bg-slate-900/80 backdrop-blur-md text-amber-400 w-10 h-10 rounded-xl flex items-center justify-center text-base shadow-lg border border-white/10">
+                            <i class="fa-solid ${t.icon}"></i>
+                        </div>
+                        <span class="absolute bottom-3 right-3 bg-amber-500 text-slate-950 font-black text-xs px-2.5 py-1 rounded-md shadow">
+                            محور #${t.id}
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-base sm:text-lg text-slate-900 dark:text-white mb-2 leading-snug group-hover:text-amber-500 transition-colors">${t.title}</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed font-medium">${t.desc}</p>
+                    </div>
+                </div>
+                <div class="px-5 pb-5 pt-0">
+                    <span class="text-xs font-extrabold text-amber-500 flex items-center gap-1.5 group-hover:translate-x-[-4px] transition-transform">
+                        استعراض التقرير المنهجي <i class="fa-solid fa-arrow-left text-[10px]"></i>
+                    </span>
+                </div>
+            `;
+            topicsContainer.appendChild(card);
+        });
+
+        // Render Members
+        const teamGrid = document.getElementById('teamGrid');
+        function renderMembers(filter = '') {
+            teamGrid.innerHTML = '';
+            const filtered = members.filter(m => m.includes(filter));
+            filtered.forEach(m => {
+                const item = document.createElement('div');
+                item.className = "p-3 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-200/80 dark:border-slate-700/60 text-xs font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2.5 hover:border-amber-500/50 transition-colors";
+                item.innerHTML = `
+                    <div class="w-7 h-7 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center text-xs shrink-0">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                    <span class="truncate">${m}</span>
+                `;
+                teamGrid.appendChild(item);
+            });
+        }
+        renderMembers();
+
+        // Search Filter
+        document.getElementById('memberSearch').addEventListener('input', (e) => {
+            renderMembers(e.target.value.trim());
+        });
+
+        // Modal Functionality
+        function openModal(title, desc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('detailModal').classList.remove('hidden');
+        }
+        function closeModal() {
+            document.getElementById('detailModal').classList.add('hidden');
+        }
+
+        // Dark/Light Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light');
+            document.documentElement.classList.toggle('dark');
+            if (document.documentElement.classList.contains('dark')) {
+                themeIcon.className = 'fa-solid fa-moon text-lg';
+            } else {
+                themeIcon.className = 'fa-solid fa-sun text-lg';
+            }
+        });
+    </script>
+</body>
+</html>
